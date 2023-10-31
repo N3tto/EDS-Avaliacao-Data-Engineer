@@ -4,6 +4,8 @@ Olá, essas são minhas soluções dos problemas propostos no desafio para a vag
 
 ## Dependências
 
+Aqui estão todas as depêndencias utilizadas no projeto. Para instalação de cada uma basta clicar na depêndencia para ser redirecionado para uma introdução dela.
+
 - [Python](https://www.python.org/downloads/)
 
 - SQL
