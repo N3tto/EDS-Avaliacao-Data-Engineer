@@ -1,6 +1,16 @@
 # EDS-Avaliação-Data-Engineer
 Olá, essas são minhas resoluções dos problemas propostos no desafio para a vaga de estágio de Data Engineer da Extreme Digital Solutions. Na pasta de problemas vocês irão encontrar um arquivo para cada problema, e neste documento irei dar uma breve explicação sobre cada resolução.
 
+# Ferramentas utilizadas no projeto
+    - Python
+    - SQL
+    - Pandas
+    - pyodbc
+    - requests
+    - Plotly
+    - streamlit
+
+
 # Problema 1
 Apenas um simples CREATE TABLE utilizando as requisições passadas no problema. Adicionei um DROP TABLE IF EXISTS apenas para testes, assim como em outras resoluções.
 
