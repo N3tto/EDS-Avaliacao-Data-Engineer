@@ -1,42 +1,48 @@
-# EDS-Avaliação-Data-Engineer
-Olá, essas são minhas resoluções dos problemas propostos no desafio para a vaga de estágio de Data Engineer da Extreme Digital Solutions. Na pasta de problemas vocês irão encontrar um arquivo para cada problema, e neste documento irei dar uma breve explicação sobre cada resolução.
+# Data Engineer da Extreme Avaliação Data Engineer
 
-# Ferramentas utilizadas no projeto
-    - Python
-    - SQL
-    - Pandas
-    - pyodbc
-    - requests
-    - Plotly
-    - streamlit
+Olá, essas são minhas soluções dos problemas propostos no desafio para a vaga de estágio de Data Engineer da Extreme Digital Solutions. Na pasta de problemas vocês irão encontrar um arquivo para cada solução bem como uma pasta com os dados para execução do problema 10, também adicionei um arquivo de texto com a descrição de cada solução que fiz na raiz do repositório.
+
+## Dependências
+
+- [Python](https://www.python.org/downloads/)
+
+- SQL
+
+- [Psycopg2](https://www.psycopg.org/docs/install.html#quick-install)
+
+- [Pandas](https://pandas.pydata.org/docs/getting_started/install.html#installing-from-pypi)
+
+- [pyodbc](https://pypi.org/project/pyodbc/)
+
+- [requests](https://pypi.org/project/requests/)
+
+- [plotly](https://plotly.com/python/getting-started/)
+
+- [streamlit](https://streamlit.io/)
 
 
-# Problema 1
-Apenas um simples CREATE TABLE utilizando as requisições passadas no problema. Adicionei um DROP TABLE IF EXISTS apenas para testes, assim como em outras resoluções.
+### Visualização do problema 10
 
-# Problema 2
-Também uma solução bem simples inserindo dados na tabela de paciente do schema stg_protuario, pegando os dados das outras tabelas, sem se preocupar muito com dados repetidos já que os próximos problemas tratam disso.
+Para visualização da solução do problema 10, eu utilizei o streamlit, por já ter uma familiaridade de outros projetos e por sua implementação simples, mas elegante.
 
-# Problema 3
-Um SELECT que faz a contagem de cada CPF para verificar se há valores repetidos. Achei que seria melhor verificar pelo CPF.
+Para executar basta seguir estes passos:
 
-# Problema 4
-Neste problema decidi usar uma subconsulta criando a tabela repetidos, primeiro é feito um SELECT na tabela Paciente, onde é retornado nome, CPF e o dt_atualizado, então utilizei a função ROW_NUMBER(), que divide a tabela em partições, que no caso foi definido pelo CPF e então dá um número sequencial a cada um, onde a sequência foi definida pelo dt_atualizado de forma decrescente. Então fiz um SELECT nessa subconsulta procurando os valores de nome, CPF e dt_atualizado onde o row_num fosse igual a 1.
+1. Instalção do streamlit:
 
-# Problema 5
-Neste problema eu utilizei o pandas para ler o csv e o pyodbc para conectar ao banco. Criei uma variável com todas as configurações do banco, depois abri a conexão, peguei os dados de um csv e tratei eles para o formato desejado, criei um script SQL e utilizei um for para inserir de linha a linha dos dados que recuperei do csv, utilizando o script SQL e por último encerrei a conexão com o banco.
+```
+$ pip install streamlit
+```
 
-# Problema 6
-Esse foi igual ao anterior com a exceção da utilização da biblioteca requests para leitura dos dados a partir de uma API e do tratamento dos dados, já que ele vem como json.
+2. Execução no terminal:
 
-# Problema 7
-Criei as duas tabelas pedidas utilizando as requisições necessárias. Criei uma chave estrangeira, id_atendimento, na tabela diagnostico para que um diagnóstico tenha um atendimento, enquanto um atendimento pode ter múltiplos diagnósticos como não depende da tabela diagnostico, como foi solicitado.
+```
+$ streamlit run solucao_10.py
+```
 
-# Problema 8
-Nesta consulta eu utilizei um SELECT simples com a função AVG() para retornar a quantidade média de diagnósticos dos atendimentos do tipo U.
+Então será aberta uma janela no seu navegador já com a aplicação em execução!
 
-# Problema 9
-Neste problema criei uma função que dada duas listas, sendo uma a prescrição e outra o estoque de remédios, retornaria se há remédios disponíveis para a prescrição. Basicamente utilizei um for para iterar por toda prescrição e um if para verificar se cada item da prescrição está no estoque. Como criei a variável avaliable anteriormente como true, se o medicamento não estiver disponível no estoque ela será alterada para false e no final a função retorna a variável avaliable.
+## Contato
 
-# Problema 10
-Neste problema eu criei uma visualização utilizando as bibliotecas pandas, para o tratamento de dados, plotly para plotagem de gráficos e streamlit para criação de um dashboard simples, por uma aplicação web. Criei dois arquivos csv para testar e demonstrar a aplicação, utilizando um gerador simples na internet, os dados estão no formato "YYYY-mm-dd HH:MM:SS". Deixei um drag and drop para carregar um csv com os dados das datas dos atendimentos, quando inserido algum arquivo, o pandas faz a leitura e o tratamento dos dados, preferi por separá-los em data e hora, para facilitar a visualização. E utilizei o plotly para criar um gráfico de barras com os dados tanto de data quanto de horário do atendimento. Os dados que utilizei estão na pasta dados_e_resultados_problema_10 assim como os prints da tela com os resultados.
+(81) 99718-7077
+antonioaraujo99@gmail.com
+[LinkedIn](https://www.linkedin.com/in/antonioaraujoneto/)
